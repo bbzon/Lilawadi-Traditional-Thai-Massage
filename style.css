@@ -1,0 +1,850 @@
+/* ========================================================================== */
+/* LILAWADI PREMIUM SPA - STYLESHEET                                          */
+/* Version: 2.0                                                               */
+/* Author: Your Team                                                          */
+/* Last Updated: 2026                                                         */
+/* ========================================================================== */
+
+/* TABLE OF CONTENTS
+   ========================================================================== */
+/*
+   1. CSS Variables
+   2. Reset & Base Styles
+   3. Header & Navigation
+   4. Hero Section
+   5. Services Section
+   6. Service Detail Pages
+   7. Aroma Therapy Slider
+   8. Benefits Section
+   9. Contact Section
+   10. Map Section
+   11. Footer
+   12. Messenger Button
+   13. Responsive Design
+*/
+
+/* ========================================================================== */
+/* 1. CSS VARIABLES                                                           */
+/* ========================================================================== */
+:root {
+  /* Brand Colors */
+  --pink-main: #FB6F92;
+  --pink-soft: #F5DCE0;
+  --pink-light: #FFE5EC;
+  --pink-dark: #E18AAA;
+  
+  /* Neutral Colors */
+  --white: #FFFFFF;
+  --text: #333333;
+  --shadow: rgba(0, 0, 0, 0.1);
+  
+  /* Spacing */
+  --spacing-sm: 15px;
+  --spacing-md: 30px;
+  --spacing-lg: 60px;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 15px;
+  --radius-lg: 25px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* ========================================================================== */
+/* 2. RESET & BASE STYLES                                                     */
+/* ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Prompt', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(180deg, var(--pink-light), var(--white));
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-normal);
+}
+
+/* ========================================================================== */
+/* 3. HEADER & NAVIGATION                                                     */
+/* ========================================================================== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px var(--spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px var(--shadow);
+  z-index: 1000;
+}
+
+/* Logo Box */
+.logo-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--pink-main);
+}
+
+/* Main Menu */
+.menu {
+  display: flex;
+  gap: 20px;
+}
+
+.menu a {
+  font-size: 16px;
+  opacity: 0.7;
+  transition: var(--transition-normal);
+}
+
+.menu a:hover {
+  opacity: 1;
+  color: var(--pink-main);
+}
+
+/* Language Menu */
+.lang-menu {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.lang-menu a {
+  font-weight: 600;
+  opacity: 0.5;
+  padding: 5px 10px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-normal);
+}
+
+.lang-menu a:hover {
+  opacity: 0.8;
+}
+
+.lang-menu a.active {
+  opacity: 1;
+  color: var(--pink-main);
+  background: var(--pink-light);
+  border-bottom: 2px solid var(--pink-main);
+}
+
+/* ========================================================================== */
+/* 4. HERO SECTION                                                            */
+/* ========================================================================== */
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(100deg, #E96F9C, #F4A8CD);
+}
+
+/* Background Image */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background: url('hin.webp') no-repeat bottom center;
+  background-size: 99%;
+  z-index: 1;
+}
+
+/* Hero Content Container */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  transform: translateY(-15px);
+  height: 55%;
+  padding: 0 40px 0 120px;
+}
+
+/* Hero Logo */
+.hero-left img {
+  width: 280px;
+  margin-top: 25px;
+}
+
+/* Hero Text */
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hero-right h1,
+.hero-right h2,
+.hero-right p {
+  margin: 0;
+  color: var(--white);
+}
+
+.hero-right h1 {
+  font-size: 42px;
+  margin-bottom: 2px;
+  margin-top: -20px;
+}
+
+.hero-right h2 {
+  font-size: 32px;
+  margin-top: 7px;
+  margin-bottom: 2px;
+}
+
+.hero-right p {
+  font-size: 24px;
+  opacity: 0.85;
+  margin-bottom: 6px;
+}
+
+/* ========================================================================== */
+/* 5. SERVICES SECTION                                                        */
+/* ========================================================================== */
+.section {
+  padding: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section h3 {
+  text-align: center;
+  font-size: 42px;
+  color: var(--pink-main);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Services Container */
+.services {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+/* Service Block */
+.service-block {
+  position: relative;
+  background: var(--white);
+  padding: var(--spacing-md);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px var(--shadow);
+  overflow: visible;
+  z-index: 1;
+  font-weight: 550;
+  font-size: 18px;
+  color: #E14F84;
+}
+
+.service-block h4 {
+  font-size: 24px;
+  color: var(--pink-main);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Service Row */
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+/* Service Note */
+.service-note {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #F4009A;
+  font-style: italic;
+}
+
+/* Decorative Flowers */
+.corner {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.top-left {
+  top: -45px;
+  left: -50px;
+  width: 160px;
+}
+
+.bottom-right {
+  bottom: -50px;
+  right: -50px;
+  width: 130px;
+}
+
+/* ========================================================================== */
+/* 6. SERVICE DETAIL PAGES                                                    */
+/* ========================================================================== */
+.service-detail {
+  padding: 10px 20px;
+  background-color: #FDF2F5;
+}
+
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* Image Section */
+.service-image {
+  min-height: 450px;
+  position: relative;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text Section */
+.service-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  background: linear-gradient(135deg, #E96F9C, #F4A8CD);
+  color: #000000;
+}
+
+.service-text h2 {
+  font-size: 28px;
+  margin-bottom: var(--spacing-sm);
+  color: #000000;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.service-sub {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #141313;
+  opacity: 0.95;
+}
+
+.service-text p {
+  font-size: 16.5px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+  color: rgba(0, 0, 0, 0.9);
+  text-align: justify;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #000000;
+  margin-top: var(--spacing-sm);
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+/* Alternating Background Colors */
+.service-detail:nth-of-type(odd) .service-text {
+  background: linear-gradient(135deg, #FFC4DA, #FAE3E9);
+  color: #000000;
+}
+
+.service-detail:nth-of-type(even) .service-text {
+  background: var(--pink-soft);
+  color: #000000;
+}
+
+/* Reverse Layout Option */
+.service-detail.reverse .service-image {
+  order: 2;
+}
+
+.service-detail.reverse .service-text {
+  order: 1;
+}
+
+/* ========================================================================== */
+/* 7. AROMA THERAPY SLIDER                                                    */
+/* ========================================================================== */
+.aroma-slider {
+  padding: 90px;
+  background: var(--pink-light);
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+  margin-top: -40px;
+  padding-bottom: 10px;
+}
+
+.aroma-slider h3 {
+  font-size: 32px;
+  color: var(--pink-main);
+  margin-bottom: 40px;
+  display: none;
+}
+
+/* Slider Track */
+.slider-track {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  cursor: grab;
+}
+
+.slider-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Slide Card */
+.slide {
+  min-width: 85%;
+  max-width: 850px;
+  flex-shrink: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  scroll-snap-align: center;
+  transition: var(--transition-normal);
+}
+
+.slide:hover {
+  transform: translateY(-5px);
+}
+
+.slide img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.slide-text {
+  padding: 35px;
+  text-align: left;
+}
+
+.slide-text h4 {
+  font-size: 22px;
+  color: var(--pink-main);
+  margin-bottom: 12px;
+}
+
+.slide-text p {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #444444;
+}
+
+/* ========================================================================== */
+/* 8. BENEFITS SECTION                                                        */
+/* ========================================================================== */
+.mix-aroma {
+  background: url("mix.webp") center/cover no-repeat;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.mix-overlay {
+  padding: var(--spacing-lg) 20px;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  padding-left: var(--spacing-lg);
+}
+
+.mix-overlay h2 {
+  color: var(--white);
+  font-size: 56px;
+  margin-bottom: var(--spacing-md);
+  text-align: left;
+}
+
+.mix-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  align-items: flex-start;
+}
+
+.mix-item {
+  background: var(--white);
+  color: var(--text);
+  padding: 14px 20px;
+  border-radius: 30px;
+  font-size: 25px;
+  text-align: left;
+  max-width: 500px;
+  margin: 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================================================== */
+/* 9. CONTACT SECTION                                                         */
+/* ========================================================================== */
+.contact {
+  padding: 50px 20px;
+  background: var(--pink-soft);
+}
+
+.contact h3 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 50px;
+  color: var(--pink-main);
+}
+
+.contact-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.contact-box {
+  background: var(--white);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  transition: var(--transition-normal);
+  text-align: center;
+}
+
+.contact-box h4 {
+  font-size: 20px;
+  margin-bottom: var(--spacing-sm);
+  color: var(--pink-main);
+}
+
+.contact-box p {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.contact-box strong {
+  font-weight: 500;
+  color: #222121;
+  letter-spacing: 0.3px;
+}
+
+.contact-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================================================================== */
+/* 10. MAP SECTION                                                            */
+/* ========================================================================== */
+.map-embed {
+  padding: var(--spacing-lg) 0;
+  background: var(--pink-light);
+  text-align: center;
+}
+
+.map-embed h3 {
+  font-size: 32px;
+  color: var(--pink-main);
+  margin-top: -35px;
+  padding: 40px var(--spacing-lg);
+}
+
+.map-container {
+  width: 100%;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 500px;
+  display: block;
+  border: 0;
+}
+
+.map-embed a {
+  display: inline-block;
+  margin: var(--spacing-md) 5px 0;
+  color: var(--pink-main);
+  font-weight: 500;
+  font-size: 18px;
+}
+
+/* ========================================================================== */
+/* 11. FOOTER                                                                 */
+/* ========================================================================== */
+footer {
+  text-align: center;
+  padding: var(--spacing-md);
+  background: var(--pink-main);
+  color: var(--white);
+  font-size: 16px;
+}
+
+/* ========================================================================== */
+/* 12. MESSENGER BUTTON                                                       */
+/* ========================================================================== */
+#messenger-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  transition: var(--transition-normal);
+}
+
+#messenger-btn:hover {
+  transform: scale(1.1);
+}
+
+#messenger-btn img {
+  width: 42px;
+  height: 32px;
+}
+
+/* ========================================================================== */
+/* 13. RESPONSIVE DESIGN                                                      */
+/* ========================================================================== */
+
+/* Tablet Screens */
+@media (max-width: 768px) {
+  /* Header */
+  header {
+    padding: var(--spacing-sm) 20px;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  header h1 {
+    font-size: 20px;
+  }
+  
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  /* Hero Section */
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    padding-left: 20px !important;
+    padding-top: 120px;
+    height: auto;
+  }
+  
+  .hero-left img {
+    width: 140px;
+  }
+  
+  .hero-right h1 {
+    font-size: 26px;
+  }
+  
+  .hero-right h2 {
+    font-size: 20px;
+  }
+  
+  .hero-right p {
+    font-size: 16px;
+  }
+  
+  .hero::after {
+    background-size: 110%;
+  }
+  
+  /* Sections */
+  .section {
+    padding: 40px 20px;
+  }
+  
+  .section h3 {
+    font-size: 28px;
+    margin-bottom: var(--spacing-md);
+  }
+  
+  /* Service Blocks */
+  .service-block {
+    padding: 20px;
+  }
+  
+  .service-block h4 {
+    font-size: 20px;
+  }
+  
+  .row {
+    font-size: 15px;
+  }
+  
+  /* Decorative Flowers */
+  .top-left {
+    top: -20px;
+    left: -20px;
+    width: 90px;
+  }
+  
+  .bottom-right {
+    bottom: -20px;
+    right: -20px;
+    width: 90px;
+  }
+  
+  /* Service Detail */
+  .service-detail-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .service-image {
+    height: 220px;
+  }
+  
+  .service-text {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .service-text p {
+    text-align: center;
+  }
+  
+  /* Slider */
+  .slide {
+    grid-template-columns: 1fr !important;
+    min-width: 90%;
+  }
+  
+  .slide img {
+    height: 200px;
+  }
+  
+  .slide-text {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Benefits Section */
+  .mix-overlay {
+    padding: var(--spacing-md) var(--spacing-sm);
+    padding-left: 20px;
+  }
+  
+  .mix-overlay h2 {
+    font-size: 32px;
+    text-align: center;
+  }
+  
+  .mix-list {
+    align-items: center;
+  }
+  
+  .mix-item {
+    font-size: 16px;
+    max-width: 100%;
+  }
+  
+  /* Contact */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .contact-box {
+    padding: 20px;
+  }
+  
+  /* Map */
+  .map-embed h3 {
+    font-size: 26px;
+    padding: var(--spacing-md) 20px;
+  }
+  
+  .map-container iframe {
+    height: 300px;
+  }
+  
+  /* Footer */
+  footer {
+    font-size: 14px;
+  }
+}
+
+/* Extra Small Screens */
+@media (max-width: 400px) {
+  .hero-right h1 {
+    font-size: 22px;
+  }
+  
+  .hero-right h2 {
+    font-size: 18px;
+  }
+  
+  .hero-right p {
+    font-size: 14px;
+  }
+  
+  .section h3 {
+    font-size: 24px;
+  }
+}
+
+/* ========================================================================== */
+/* END OF STYLESHEET                                                          */
+/* ========================================================================== */

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* ========================= */
+/* IMPRESSUM PAGE */
+/* ========================= */
+.impressum-page {
+  padding: 140px 20px 80px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.impressum-page h1 {
+  text-align: center;
+  color: var(--pink-main);
+  margin-bottom: 40px;
+  font-size: 40px;
+}
+
+.impressum-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  line-height: 1.8;
+  font-size: 18px;
+}
+</style>
+
+</head>
+<body>
+
+<!-- ========================= -->
+<!-- HEADER (เหมือน index 100%) -->
+<!-- ========================= -->
+<header>
+  <div class="logo-box">
+    <h1>LILAWADI</h1>
+  </div>
+
+  <nav class="menu">
+    <a href="index.html#home" data-translate="menu-home">หน้าแรก</a>
+    <a href="index.html#services" data-translate="menu-services">บริการ</a>
+    <a href="index.html#contact" data-translate="menu-contact">ติดต่อ</a>
+    <a href="index.html#map" data-translate="menu-map">ที่อยู่</a>
+  </nav>
+
+  <nav class="lang-menu">
+    <a href="#" id="lang-hu" onclick="setLang('hu'); return false;">HU</a>
+    <a href="#" id="lang-th" onclick="setLang('th'); return false;">TH</a>
+    <a href="#" id="lang-en" onclick="setLang('en'); return false;">EN</a>
+  </nav>
+</header>
+
+
+<!-- ========================= -->
+<!-- CONTENT -->
+<!-- ========================= -->
+<section class="impressum-page">
+
+  <h1 data-translate="imp-title">Impressum</h1>
+
+  <div class="impressum-box">
+
+    <p><strong data-translate="imp-name">Business Name:</strong> Lilawadi Traditional Thai Massage</p>
+
+    <p><strong data-translate="imp-address">Address:</strong> Pesti út 41-43, 1173 Budapest, Hungary</p>
+
+    <p><strong data-translate="imp-phone">Phone:</strong> +36 20 341 9970</p>
+
+    <p><strong>Email:</strong> thaililawadi@gmail.com</p>
+
+    <p><strong data-translate="imp-owner">Responsible Person:</strong> Nam Pattarapon</p>
+
+  </div>
+
+</section>
+
+
+<!-- ========================= -->
+<!-- SCRIPT (เหมือน index) -->
+<!-- ========================= -->
+<script>
+const translations = {
+  th: {
+    "menu-home": "หน้าแรก",
+    "menu-services": "บริการ",
+    "menu-contact": "ติดต่อ",
+    "menu-map": "ที่อยู่",
+
+    "imp-title": "ข้อมูลทางกฎหมาย",
+    "imp-name": "ชื่อธุรกิจ:",
+    "imp-address": "ที่อยู่:",
+    "imp-phone": "โทร:",
+    "imp-owner": "ผู้รับผิดชอบ:"
+  },
+
+  en: {
+    "menu-home": "Home",
+    "menu-services": "Services",
+    "menu-contact": "Contact",
+    "menu-map": "Location",
+
+    "imp-title": "Impressum",
+    "imp-name": "Business Name:",
+    "imp-address": "Address:",
+    "imp-phone": "Phone:",
+    "imp-owner": "Responsible Person:"
+  },
+
+  hu: {
+    "menu-home": "Főoldal",
+    "menu-services": "Szolgáltatások",
+    "menu-contact": "Kapcsolat",
+    "menu-map": "Helyszín",
+
+    "imp-title": "Impresszum",
+    "imp-name": "Cégnév:",
+    "imp-address": "Cím:",
+    "imp-phone": "Telefon:",
+    "imp-owner": "Felelős személy:"
+  }
+};
+
+function setLang(lang) {
+  document.querySelectorAll('[data-translate]').forEach(el => {
+    const key = el.getAttribute('data-translate');
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+
+  document.querySelectorAll('.lang-menu a').forEach(el => el.classList.remove('active'));
+  document.getElementById('lang-' + lang).classList.add('active');
+
+  localStorage.setItem('preferredLanguage', lang);
+}
+
+// โหลดภาษาเดิม
+setLang(localStorage.getItem('preferredLanguage') || 'th');
+</script>
+
+</body>
+</html>
