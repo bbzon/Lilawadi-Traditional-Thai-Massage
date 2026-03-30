@@ -445,7 +445,7 @@ header h1 {
 
 /* Slide Card */
 .slide {
-  min-width: 85%;
+  min-width: 95%;
   max-width: 850px;
   flex-shrink: 0;
   display: grid;
@@ -470,7 +470,9 @@ header h1 {
 
 .slide-text {
   padding: 35px;
-  text-align: left;
+  text-align: center;
+  white-space: normal; 
+  word-wrap: break-word;
 }
 
 .slide-text h4 {
