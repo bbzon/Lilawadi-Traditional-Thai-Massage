@@ -202,7 +202,7 @@ header h1 {
 /* Hero Logo */
 .hero-left img {
   width: 280px;
-  margin-top: 25px;
+  margin-top: 45px;
 }
 
 /* Hero Text */
@@ -414,12 +414,12 @@ header h1 {
 /* 7. AROMA THERAPY SLIDER                                                    */
 /* ========================================================================== */
 .aroma-slider {
-  padding: 90px;
+  padding: 60px 20px;
   background: var(--pink-light);
   text-align: center;
   margin-bottom: var(--spacing-sm);
   margin-top: -40px;
-  padding-bottom: 10px;
+  padding-bottom: 40px;
 }
 
 .aroma-slider h3 {
@@ -432,11 +432,12 @@ header h1 {
 /* Slider Track */
 .slider-track {
   display: flex;
-  gap: 25px;
+  gap: 20px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   cursor: grab;
+  padding: 0 10px;
 }
 
 .slider-track::-webkit-scrollbar {
@@ -445,7 +446,7 @@ header h1 {
 
 /* Slide Card */
 .slide {
-  min-width: 95%;
+  min-width: 85%;
   max-width: 850px;
   flex-shrink: 0;
   display: grid;
@@ -470,9 +471,7 @@ header h1 {
 
 .slide-text {
   padding: 35px;
-  text-align: center;
-  white-space: normal; 
-  word-wrap: break-word;
+  text-align: left;
 }
 
 .slide-text h4 {
@@ -770,7 +769,9 @@ footer {
   /* Slider */
   .slide {
     grid-template-columns: 1fr !important;
-    min-width: 90%;
+    min-width: 85%;
+    max-width: 95%;
+    margin: 0 auto;
   }
   
   .slide img {
