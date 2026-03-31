@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Impressum</title>
+<title>Impressum - LILAWADI</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -32,14 +32,18 @@
   line-height: 1.8;
   font-size: 18px;
 }
+
+/* ปรับปรุงให้ดูดีในมือถือ */
+@media (max-width: 768px) {
+  .impressum-page { padding-top: 100px; }
+  .impressum-page h1 { font-size: 28px; }
+  .impressum-box { padding: 25px; font-size: 16px; }
+}
 </style>
 
 </head>
 <body>
 
-<!-- ========================= -->
-<!-- HEADER (เหมือน index 100%) -->
-<!-- ========================= -->
 <header>
   <div class="logo-box">
     <h1>LILAWADI</h1>
@@ -60,9 +64,6 @@
 </header>
 
 
-<!-- ========================= -->
-<!-- CONTENT -->
-<!-- ========================= -->
 <section class="impressum-page">
 
   <h1 data-translate="imp-title">Impressum</h1>
@@ -71,22 +72,19 @@
 
     <p><strong data-translate="imp-name">Business Name:</strong> Lilawadi Traditional Thai Massage</p>
 
-    <p><strong data-translate="imp-address">Address:</strong> Pesti út 41-43, 1173 Budapest, Hungary</p>
+    <p><strong data-translate="imp-address">Registered Address:</strong> 1164 Budapest, Gabonás szem u. 1. (Hrsz: 118020)</p>
 
     <p><strong data-translate="imp-phone">Phone:</strong> +36 20 341 9970</p>
 
     <p><strong>Email:</strong> thaililawadi@gmail.com</p>
 
-    <p><strong data-translate="imp-owner">Responsible Person:</strong> Nam Pattarapon</p>
+    <p><strong data-translate="imp-owner">Responsible Person / Owner:</strong> Fleischer József</p>
 
   </div>
 
 </section>
 
 
-<!-- ========================= -->
-<!-- SCRIPT (เหมือน index) -->
-<!-- ========================= -->
 <script>
 const translations = {
   th: {
@@ -97,9 +95,9 @@ const translations = {
 
     "imp-title": "ข้อมูลทางกฎหมาย",
     "imp-name": "ชื่อธุรกิจ:",
-    "imp-address": "ที่อยู่:",
+    "imp-address": "ที่อยู่จดทะเบียน:",
     "imp-phone": "โทร:",
-    "imp-owner": "ผู้รับผิดชอบ:"
+    "imp-owner": "ผู้รับผิดชอบ / เจ้าของ:"
   },
 
   en: {
@@ -110,9 +108,9 @@ const translations = {
 
     "imp-title": "Impressum",
     "imp-name": "Business Name:",
-    "imp-address": "Address:",
+    "imp-address": "Registered Address:",
     "imp-phone": "Phone:",
-    "imp-owner": "Responsible Person:"
+    "imp-owner": "Responsible Person / Owner:"
   },
 
   hu: {
@@ -123,9 +121,9 @@ const translations = {
 
     "imp-title": "Impresszum",
     "imp-name": "Cégnév:",
-    "imp-address": "Cím:",
+    "imp-address": "Bejegyzett székhely:",
     "imp-phone": "Telefon:",
-    "imp-owner": "Felelős személy:"
+    "imp-owner": "Felelős személy / Tulajdonos:"
   }
 };
 
@@ -138,13 +136,14 @@ function setLang(lang) {
   });
 
   document.querySelectorAll('.lang-menu a').forEach(el => el.classList.remove('active'));
-  document.getElementById('lang-' + lang).classList.add('active');
+  const activeLangBtn = document.getElementById('lang-' + lang);
+  if (activeLangBtn) activeLangBtn.classList.add('active');
 
   localStorage.setItem('preferredLanguage', lang);
 }
 
-// โหลดภาษาเดิม
-setLang(localStorage.getItem('preferredLanguage') || 'th');
+// โหลดภาษาตามที่เลือกไว้ล่าสุด หรือค่าเริ่มต้นเป็น HU เพราะธุรกิจอยู่ในฮังการี
+setLang(localStorage.getItem('preferredLanguage') || 'hu');
 </script>
 
 </body>
